@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './components/Header'
+import Home from './components/Home'
 
 function App() {
   
@@ -11,6 +12,9 @@ function App() {
       <div className="container-flex">
         <div className="row">
           <Header/>
+        </div>
+        <div className="row">
+          <Home/>
         </div>
       </div>
      
