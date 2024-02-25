@@ -72,8 +72,7 @@ export default function Home() {
                         <h4>Weather Forcast </h4>
                     </div></nav>
             </div>
-
-
+            
             <div className="row mx-auto">
                
                 <div className="col">
