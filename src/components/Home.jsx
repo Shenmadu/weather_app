@@ -27,8 +27,6 @@ export default function Home() {
     return (
 
         <div className="container">
-
-
             <div className="row img text-center" style={{ backgroundImage: `url(${backImg})` }} >
 
                 <h1 className="display-5 fw-bold text-body-emphasis mt-3" id="title">Weather Today</h1>
@@ -68,8 +66,8 @@ export default function Home() {
 
             <div className="my-5">
                 <nav aria-label="breadcrumb">
-                    <div className="breadcrumb breadcrumb-chevron p-1 bg-success rounded-3  text-white ">
-                        <h4>Weather Forcast </h4>
+                    <div className="breadcrumb breadcrumb-chevron p-1  rounded-3  text-white "style={{ backgroundColor: '#0e3065' }}>
+                        <h4 className="ms-3">Weather Forcast </h4>
                     </div></nav>
             </div>
             
