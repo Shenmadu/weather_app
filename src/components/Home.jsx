@@ -78,7 +78,7 @@ export default function Home() {
                     <div className="card text-center cardBox">
                         <div className="card-body">
                             <h5 className="card-title">{weather.forecast && weather.forecast.forecastday[0].day.condition.text}</h5>
-                            <h2>{weather.forecast && weather.forecast.forecastday[0].day.avgtemp_c}</h2>
+                            <h2>{weather.forecast && weather.forecast.forecastday[0].day.avgtemp_c}°C</h2>
                             <img src={weather.forecast && weather.forecast.forecastday[0].day.condition.icon} alt=".." />
                         </div>
                     </div>
@@ -88,7 +88,7 @@ export default function Home() {
                     <div className="card text-center cardBox">
                         <div className="card-body">
                             <h5 className="card-title">{weather.forecast && weather.forecast.forecastday[1].day.condition.text}</h5>
-                            <h2>{weather.forecast && weather.forecast.forecastday[1].day.avgtemp_c}</h2>
+                            <h2>{weather.forecast && weather.forecast.forecastday[1].day.avgtemp_c}°C</h2>
                             <img src={weather.forecast && weather.forecast.forecastday[1].day.condition.icon} alt=".." />
                         </div>
                     </div>
@@ -97,7 +97,7 @@ export default function Home() {
                     <div className="card text-center cardBox">
                         <div className="card-body">
                             <h5 className="card-title">{weather.forecast && weather.forecast.forecastday[2].day.condition.text}</h5>
-                            <h2>{weather.forecast && weather.forecast.forecastday[2].day.avgtemp_c}</h2>
+                            <h2>{weather.forecast && weather.forecast.forecastday[2].day.avgtemp_c}°C</h2>
                             <img src={weather.forecast && weather.forecast.forecastday[2].day.condition.icon} alt=".." />
                         </div>
                     </div>
@@ -106,7 +106,7 @@ export default function Home() {
                     <div className="card text-center cardBox">
                         <div className="card-body">
                             <h5 className="card-title">{weather.forecast && weather.forecast.forecastday[0].day.condition.text}</h5>
-                            <h2>{weather.forecast && weather.forecast.forecastday[0].day.avgtemp_c}</h2>
+                            <h2>{weather.forecast && weather.forecast.forecastday[0].day.avgtemp_c}°C</h2>
                             <img src={weather.forecast && weather.forecast.forecastday[0].day.condition.icon} alt=".." />
                         </div>
                     </div>
