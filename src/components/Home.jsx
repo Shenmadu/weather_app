@@ -7,6 +7,8 @@ export default function Home() {
     const [location, setLocation] = useState("colombo");
     const [weather, setWeather] = useState({});
 
+  
+
 
     const getData = () => {
         let loc = document.getElementById("txt").value;
@@ -24,12 +26,16 @@ export default function Home() {
 
 
 
+
+
     return (
 
         <div className="container">
+            {/* search section start */}
             <div className="row img text-center" style={{ backgroundImage: `url(${backImg})` }} >
 
-                <h1 className="display-5 fw-bold text-body-emphasis mt-3" id="title">Weather Today</h1>
+                <h2 className="display-5 fw-bold text-body-emphasis mt-3" id="title">Weather Today at {location}</h2>
+       
                 <div className="col-6 mx-auto">
                     <div className="d-flex" role="search">
                         <input id="txt" className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
@@ -37,9 +43,10 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+                {/* search section end */}
 
+                {/* current weather section strat */}
             <div className=" row mt-2 text-center ">
-
 
                 <div className="col-lg-4">
                     <h4>{weather.location && weather.location.name}</h4>
@@ -61,25 +68,26 @@ export default function Home() {
 
                 </div>
             </div>
+            {/* current weather section end */}
 
-            {/* card section */}
+            {/* card section start */}
 
             <div className="my-5">
                 <nav aria-label="breadcrumb">
-                    <div className="breadcrumb breadcrumb-chevron p-1  rounded-3  text-white "style={{ backgroundColor: '#0e3065' }}>
+                    <div className="breadcrumb breadcrumb-chevron p-1  rounded-3  text-white " style={{ backgroundColor: '#0e3065' }}>
                         <h4 className="ms-3">Weather Forcast </h4>
                     </div></nav>
             </div>
-            
-            <div className="row mx-auto">
-               
-                <div className="col">
 
-                    <div className="card text-center cardBox">
+            <div className="row mx-auto">
+
+                <div className="col ms-2">
+                    <div className="card text-center cardBox ">
                         <div className="card-body">
                             <h5 className="card-title">{weather.forecast && weather.forecast.forecastday[0].day.condition.text}</h5>
                             <h2>{weather.forecast && weather.forecast.forecastday[0].day.avgtemp_c}°C</h2>
                             <img src={weather.forecast && weather.forecast.forecastday[0].day.condition.icon} alt=".." />
+                            <h5>{weather.forecast && weather.forecast.forecastday[0].date}</h5>
                         </div>
                     </div>
 
@@ -90,6 +98,7 @@ export default function Home() {
                             <h5 className="card-title">{weather.forecast && weather.forecast.forecastday[1].day.condition.text}</h5>
                             <h2>{weather.forecast && weather.forecast.forecastday[1].day.avgtemp_c}°C</h2>
                             <img src={weather.forecast && weather.forecast.forecastday[1].day.condition.icon} alt=".." />
+                            <h5>{weather.forecast && weather.forecast.forecastday[1].date}</h5>
                         </div>
                     </div>
                 </div>
@@ -99,6 +108,7 @@ export default function Home() {
                             <h5 className="card-title">{weather.forecast && weather.forecast.forecastday[2].day.condition.text}</h5>
                             <h2>{weather.forecast && weather.forecast.forecastday[2].day.avgtemp_c}°C</h2>
                             <img src={weather.forecast && weather.forecast.forecastday[2].day.condition.icon} alt=".." />
+                            <h5>{weather.forecast && weather.forecast.forecastday[2].date}</h5>
                         </div>
                     </div>
                 </div>
@@ -111,9 +121,9 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                
-            </div>
 
+            </div>
+            {/* card section start */}
 
         </div>
 
