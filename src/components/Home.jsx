@@ -7,7 +7,7 @@ export default function Home() {
     const [location, setLocation] = useState("colombo");
     const [weather, setWeather] = useState({});
 
-  
+
 
 
     const getData = () => {
@@ -35,33 +35,33 @@ export default function Home() {
             <div className="row img text-center" style={{ backgroundImage: `url(${backImg})` }} >
 
                 <h2 className="display-5 fw-bold text-body-emphasis mt-3" id="title">Weather Today at {location}</h2>
-       
-                <div className="col-6 mx-auto">
+
+                <div className="col-lg-6 col-sm-8  mx-auto">
                     <div className="d-flex" role="search">
                         <input id="txt" className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                         <button onClick={getData} className="btn btn-primary" type="submit">Search</button>
                     </div>
                 </div>
             </div>
-                {/* search section end */}
+            {/* search section end */}
 
-                {/* current weather section strat */}
-            <div className=" row mt-2 text-center ">
+            {/* current weather section strat */}
+            <div className=" row mt-2 text-center">
 
-                <div className="col-lg-4">
+                <div className="col-lg-4 col-md-4 ">
                     <h4>{weather.location && weather.location.name}</h4>
                     <img src={weather.current && weather.current.condition.icon} alt=".." />
                     <h4>{weather.current && weather.current.condition.text}</h4>
                 </div>
 
-                <div className="col-lg-4">
+                <div className="col-lg-4 col-md-4 ">
                     <h3>{weather.current && weather.current.temp_c} °C</h3>
                     <h4>Wind: {weather.current && weather.current.wind_kph} kph</h4>
                     <h4>Wind Direction: {weather.current && weather.current.wind_dir} </h4>
                     <h4>Pressure: {weather.current && weather.current.pressure_in} in</h4>
                 </div>
 
-                <div className="col-lg-4">
+                <div className="col-lg-4 col-md-4">
                     <h3><h4>{weather.location && weather.location.localtime}</h4></h3>
                     <h4>{weather.location && weather.location.country}</h4>
                     <h4>{weather.location && weather.location.region}</h4>
@@ -78,50 +78,52 @@ export default function Home() {
                         <h4 className="ms-3">Weather Forcast </h4>
                     </div></nav>
             </div>
+            <div className="container">
+                <div className="row mx-auto text-center ">
 
-            <div className="row mx-auto">
+                    <div className="col-lg-3 col-md-4 col-sm-6  mb-3 ">
+                        <div className="card text-center">
+                            <div className="card-body">
+                                <h5 className="card-title">{weather.forecast && weather.forecast.forecastday[0].day.condition.text}</h5>
+                                <h2>{weather.forecast && weather.forecast.forecastday[0].day.avgtemp_c}°C</h2>
+                                <img src={weather.forecast && weather.forecast.forecastday[0].day.condition.icon} alt=".." />
+                                <h5>{weather.forecast && weather.forecast.forecastday[0].date}</h5>
+                            </div>
+                        </div>
 
-                <div className="col ms-2">
-                    <div className="card text-center cardBox ">
-                        <div className="card-body">
-                            <h5 className="card-title">{weather.forecast && weather.forecast.forecastday[0].day.condition.text}</h5>
-                            <h2>{weather.forecast && weather.forecast.forecastday[0].day.avgtemp_c}°C</h2>
-                            <img src={weather.forecast && weather.forecast.forecastday[0].day.condition.icon} alt=".." />
-                            <h5>{weather.forecast && weather.forecast.forecastday[0].date}</h5>
+                    </div>
+                    <div className="col-lg-3 col-md-4 col-sm-6  mb-3">
+                        <div className="card text-center">
+                            <div className="card-body">
+                                <h5 className="card-title">{weather.forecast && weather.forecast.forecastday[1].day.condition.text}</h5>
+                                <h2 >{weather.forecast && weather.forecast.forecastday[1].day.avgtemp_c}°C</h2>
+                                <img src={weather.forecast && weather.forecast.forecastday[1].day.condition.icon} alt=".." />
+                                <h5 >{weather.forecast && weather.forecast.forecastday[1].date}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-3 col-md-4 col-sm-6  mb-3">
+                        <div className="card text-center ">
+                            <div className="card-body">
+                                <h5 className="card-title">{weather.forecast && weather.forecast.forecastday[2].day.condition.text}</h5>
+                                <h2>{weather.forecast && weather.forecast.forecastday[2].day.avgtemp_c}°C</h2>
+                                <img src={weather.forecast && weather.forecast.forecastday[2].day.condition.icon} alt=".." />
+                                <h5>{weather.forecast && weather.forecast.forecastday[2].date}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-3 col-md-4 col-sm-6  mb-3">
+                        <div className="card text-center">
+                            <div className="card-body">
+                                <h5 className="card-title">{weather.forecast && weather.forecast.forecastday[0].day.condition.text}</h5>
+                                <h2>{weather.forecast && weather.forecast.forecastday[0].day.avgtemp_c}°C</h2>
+                                <img src={weather.forecast && weather.forecast.forecastday[0].day.condition.icon} alt=".." />
+                                <h5>{weather.forecast && weather.forecast.forecastday[0].date}</h5>
+                            </div>
                         </div>
                     </div>
 
                 </div>
-                <div className="col">
-                    <div className="card text-center cardBox">
-                        <div className="card-body">
-                            <h5 className="card-title">{weather.forecast && weather.forecast.forecastday[1].day.condition.text}</h5>
-                            <h2>{weather.forecast && weather.forecast.forecastday[1].day.avgtemp_c}°C</h2>
-                            <img src={weather.forecast && weather.forecast.forecastday[1].day.condition.icon} alt=".." />
-                            <h5>{weather.forecast && weather.forecast.forecastday[1].date}</h5>
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card text-center cardBox">
-                        <div className="card-body">
-                            <h5 className="card-title">{weather.forecast && weather.forecast.forecastday[2].day.condition.text}</h5>
-                            <h2>{weather.forecast && weather.forecast.forecastday[2].day.avgtemp_c}°C</h2>
-                            <img src={weather.forecast && weather.forecast.forecastday[2].day.condition.icon} alt=".." />
-                            <h5>{weather.forecast && weather.forecast.forecastday[2].date}</h5>
-                        </div>
-                    </div>
-                </div>
-                <div className="col">
-                    <div className="card text-center cardBox">
-                        <div className="card-body">
-                            <h5 className="card-title">{weather.forecast && weather.forecast.forecastday[0].day.condition.text}</h5>
-                            <h2>{weather.forecast && weather.forecast.forecastday[0].day.avgtemp_c}°C</h2>
-                            <img src={weather.forecast && weather.forecast.forecastday[0].day.condition.icon} alt=".." />
-                        </div>
-                    </div>
-                </div>
-
             </div>
             {/* card section start */}
 
